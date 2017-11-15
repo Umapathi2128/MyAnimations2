@@ -237,7 +237,7 @@ public class MainActivity extends AppCompatActivity
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-
+        String yugandhar = "yugandhar";
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
