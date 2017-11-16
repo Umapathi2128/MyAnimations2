@@ -29,5 +29,7 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
     compile "com.andkulikov:transitionseverywhere:1.7.7"
     compile 'pl.droidsonroids.gif:android-gif-drawable:1.1.0'
+    compile 'com.ToxicBakery.viewpager.transforms:view-pager-transforms:1.2.32@aar'
+
 
 }

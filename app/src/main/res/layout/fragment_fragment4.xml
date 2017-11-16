@@ -3,16 +3,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#b02e2b2b"
-    tools:context="com.example.umapa.myanimations2.Fragments.Fragment2">
+    tools:context="com.example.umapa.myanimations2.Fragments.Fragment1">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:id="@+id/f2textview"
+        android:id="@+id/f1textview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-       android:background="@drawable/crt_img2"
+       android:background="@drawable/crt_img4"
         android:gravity="center"
-        android:textSize="30sp"
-        android:textColor="#fff"/>
+        android:textColor="#fff"
+        android:textSize="30sp"/>
 
 </FrameLayout>

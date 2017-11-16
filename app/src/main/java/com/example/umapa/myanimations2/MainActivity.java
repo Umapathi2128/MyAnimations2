@@ -31,11 +31,24 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
+import com.ToxicBakery.viewpager.transforms.AccordionTransformer;
+import com.ToxicBakery.viewpager.transforms.BackgroundToForegroundTransformer;
+import com.ToxicBakery.viewpager.transforms.CubeInTransformer;
+import com.ToxicBakery.viewpager.transforms.CubeOutTransformer;
+import com.ToxicBakery.viewpager.transforms.RotateDownTransformer;
+import com.ToxicBakery.viewpager.transforms.RotateUpTransformer;
+import com.ToxicBakery.viewpager.transforms.ScaleInOutTransformer;
+import com.ToxicBakery.viewpager.transforms.StackTransformer;
+import com.ToxicBakery.viewpager.transforms.TabletTransformer;
+import com.ToxicBakery.viewpager.transforms.ZoomInTransformer;
 import com.example.umapa.myanimations2.Adapters.AdapterFragments;
 import com.example.umapa.myanimations2.Adapters.ListFragments;
 import com.example.umapa.myanimations2.Fragments.Fragment1;
 import com.example.umapa.myanimations2.Fragments.Fragment2;
 import com.example.umapa.myanimations2.Fragments.Fragment3;
+import com.example.umapa.myanimations2.Fragments.Fragment4;
+import com.example.umapa.myanimations2.Fragments.Fragment5;
+import com.example.umapa.myanimations2.Fragments.Fragment6;
 import com.example.umapa.myanimations2.Fragments.ListFragment;
 import com.example.umapa.myanimations2.Fragments.WidgetsFragment;
 
@@ -45,7 +58,8 @@ import pl.droidsonroids.gif.GifImageView;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,ListFragment.OnFragmentInteractionListener,
-        Fragment2.OnFragmentInteractionListener, Fragment1.OnFragmentInteractionListener,Fragment3.OnFragmentInteractionListener
+        Fragment2.OnFragmentInteractionListener, Fragment1.OnFragmentInteractionListener,Fragment4.OnFragmentInteractionListener,
+        Fragment3.OnFragmentInteractionListener,Fragment5.OnFragmentInteractionListener,Fragment6.OnFragmentInteractionListener
         ,Animation.AnimationListener,AdapterView.OnItemSelectedListener,View.OnClickListener {
     RelativeLayout content_layout;
     //    ViewPager viewPager;
@@ -61,6 +75,7 @@ public class MainActivity extends AppCompatActivity
     ArrayList widgetList;
     LinearLayout linearLayout;
     int animationSelectedItem;
+    Spinner spinner;
     GifImageView gifImageView;
     LinearLayout gif_layout;
     boolean isListView = true, isViewPager = true,isWidgets=true;
@@ -78,6 +93,7 @@ public class MainActivity extends AppCompatActivity
         setFragments();
         setClickListeners();
         addingAdapeters(animationList);
+        spinner.setVisibility(View.GONE);
 //    viewPagerAnimations();
 
 
@@ -94,8 +110,7 @@ public class MainActivity extends AppCompatActivity
         listView = findViewById(R.id.lstview);
         linearLayout=findViewById(R.id.widgets);
         gifImageView= (GifImageView) findViewById(R.id.gif);
-//        gif_layout=findViewById(R.id.ll_gif);
-//        apply=findViewById(R.id.btn_apply);
+        spinner= findViewById(R.id.spin);
 
         animList = new ArrayList();
 
@@ -133,14 +148,12 @@ public class MainActivity extends AppCompatActivity
         viewpager_list.add(new Fragment1());
         viewpager_list.add(new Fragment2());
         viewpager_list.add(new Fragment3());
+        viewpager_list.add(new Fragment4());
+        viewpager_list.add(new Fragment5());
+        viewpager_list.add(new Fragment6());
         viewpager_list.add(new Fragment1());
         viewpager_list.add(new Fragment2());
         viewpager_list.add(new Fragment3());
-
-//        widgetList=new ArrayList();
-//        widgetList.add(new WidgetsFragment());
-//
-
 
 
         animList.add(R.anim.fade_in);
@@ -149,8 +162,6 @@ public class MainActivity extends AppCompatActivity
         animList.add(R.anim.rotate);
         animList.add(R.anim.zoom_in);
         animList.add(R.anim.zoom_out);
-
-
     }
 
     // All click Listeners will done here...
@@ -163,7 +174,7 @@ public class MainActivity extends AppCompatActivity
     * Spiner adapter is done here....
      */
     public void addingAdapeters( String animationList1[]) {
-        Spinner spinner = findViewById(R.id.spin);
+
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_item, animationList1);
@@ -206,9 +217,9 @@ public class MainActivity extends AppCompatActivity
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
-        String[] names={"RotateUpTransformer","CubeInTransformation","StackTransformer","BackgroundToForegroundTransformer",
-                "FlipHorizontalTransformer","BackgroundToForegroundTransformer","ForegroundToBackgroundTransformer",
-                "CubeOutTransformation"};
+        String[] names={"RotateUpTransformer","CubeInTransformation","ScaleInOutTransformer","BackgroundToForegroundTransformer",
+                "StackTransformer","TabletTransformer","ZoomInTransformer",
+                "CubeOutTransformation","AccordionTransformer"};
         // Handle navigation view item clicks here.
         switch (item.getItemId()) {
             case R.id.nav_list:
@@ -220,6 +231,8 @@ public class MainActivity extends AppCompatActivity
 
                 listView.setAdapter(adapterFragments);
                 listView.setVisibility(View.VISIBLE);
+                spinner.setVisibility(View.VISIBLE);
+
                 break;
             case R.id.nav_gallery:
                 gifImageView.setVisibility(View.GONE);
@@ -235,12 +248,14 @@ public class MainActivity extends AppCompatActivity
                 ListFragments listFragment = new ListFragments(getSupportFragmentManager(), viewpager_list);
                 viewPager.setAdapter(listFragment);
                 viewPager.setVisibility(View.VISIBLE);
+                spinner.setVisibility(View.VISIBLE);
 
                 break;
             case R.id.nav_img:
                 listView.setVisibility(View.GONE);
                 viewPager.setVisibility(View.GONE);
                 gifImageView.setVisibility(View.VISIBLE);
+                spinner.setVisibility(View.GONE);
                 break;
 
 
@@ -260,7 +275,6 @@ public class MainActivity extends AppCompatActivity
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        String yugandhar = "yugandhar";
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
@@ -470,158 +484,170 @@ public class MainActivity extends AppCompatActivity
      */
     public void animationProvider2()
     {
+
        switch (animationSelectedItem)
        {
            case 0:
-               viewPager.setPageTransformer(true,new ViewPager.PageTransformer() {
-                   @Override
-                   public void transformPage(@NonNull View view, float position)
-                   {
-                       final float width = view.getWidth();
-                       float ROT_MOD = -15f;
-                       final float rotation = ROT_MOD * position;
-
-                       view.setPivotX(width * 0.5f);
-                       view.setPivotY(0f);
-                       view.setTranslationX(0f);
-                       view.setRotation(rotation);
-                   }
-               });
+//               viewPager.setPageTransformer(true,new ViewPager.PageTransformer() {
+//                   @Override
+//                   public void transformPage(@NonNull View view, float position)
+//                   {
+//                       final float width = view.getWidth();
+//                       float ROT_MOD = -15f;
+//                       final float rotation = ROT_MOD * position;
+//
+//                       view.setPivotX(width * 0.5f);
+//                       view.setPivotY(0f);
+//                       view.setTranslationX(0f);
+//                       view.setRotation(rotation);
+//                   }
+//               });
+               viewPager.setPageTransformer(true,new RotateUpTransformer());
                break;
 
 
            case 1:
-               viewPager.setPageTransformer(true,new ViewPager.PageTransformer() {
-                   @Override
-                   public void transformPage(@NonNull View view, float position)
-                   {
-                       final float rotation = 180f * position;
-
-                       view.setVisibility(rotation > 90f || rotation < -90f ? View.INVISIBLE : View.VISIBLE);
-                       view.setPivotX(view.getWidth() * 0.5f);
-                       view.setPivotY(view.getHeight() * 0.5f);
-                       view.setRotationY(rotation);
-                   }
-               });
+//               viewPager.setPageTransformer(true,new ViewPager.PageTransformer() {
+//                   @Override
+//                   public void transformPage(@NonNull View view, float position)
+//                   {
+//                       final float rotation = 180f * position;
+//
+//                       view.setVisibility(rotation > 90f || rotation < -90f ? View.INVISIBLE : View.VISIBLE);
+//                       view.setPivotX(view.getWidth() * 0.5f);
+//                       view.setPivotY(view.getHeight() * 0.5f);
+//                       view.setRotationY(rotation);
+//                   }
+//               });
+               viewPager.setPageTransformer(true,new CubeInTransformer());
                break;
 
            case 2:
-               viewPager.setPageTransformer(true, new ViewPager.PageTransformer() {
-                   @Override
-                   public void transformPage(View view, float position) {
-                       view.setTranslationX(position < 0 ? 0f : -view.getWidth() * position);
-                   }
-               });
+//               viewPager.setPageTransformer(true, new ViewPager.PageTransformer() {
+//                   @Override
+//                   public void transformPage(View view, float position) {
+//                       view.setTranslationX(position < 0 ? 0f : -view.getWidth() * position);
+//                   }
+//               });
+               viewPager.setPageTransformer(true,new ScaleInOutTransformer());
                break;
            case 3:
-               viewPager.setPageTransformer(true, new ViewPager.PageTransformer() {
-                   @Override
-                   public void transformPage(View view, float position) {
-                       final float height = view.getHeight();
-                       final float width = view.getWidth();
-                       final float scale = min(position < 0 ? 1f : Math.abs(1f - position), 0.5f);
-
-                       view.setScaleX(scale);
-                       view.setScaleY(scale);
-                       view.setPivotX(width * 0.5f);
-                       view.setPivotY(height * 0.5f);
-                       view.setTranslationX(position < 0 ? width * position : -width * position * 0.25f);
-                   }
-               });
+//               viewPager.setPageTransformer(true, new ViewPager.PageTransformer() {
+//                   @Override
+//                   public void transformPage(View view, float position) {
+//                       final float height = view.getHeight();
+//                       final float width = view.getWidth();
+//                       final float scale = min(position < 0 ? 1f : Math.abs(1f - position), 0.5f);
+//
+//                       view.setScaleX(scale);
+//                       view.setScaleY(scale);
+//                       view.setPivotX(width * 0.5f);
+//                       view.setPivotY(height * 0.5f);
+//                       view.setTranslationX(position < 0 ? width * position : -width * position * 0.25f);
+//                   }
+//               });
+               viewPager.setPageTransformer(true,new BackgroundToForegroundTransformer());
                break;
            case 4:
-               viewPager.setPageTransformer(true, new ViewPager.PageTransformer() {
-                   @Override
-                   public void transformPage(View view, float position) {
-                       int pageWidth = view.getWidth();
 
-
-                       if (position <=0) { // [-Infinity,-1)
-                           // This page is way off-screen to the left.
-                           view.setAlpha(1);
-
-
-                       } else if (position == 1) { // [-1,1]
-
-                           view.setTranslationX(-position * (pageWidth)); //Half the normal speed
-
-                       } else { // (1,+Infinity]
-                           // This page is way off-screen to the right.
-                           view.setAlpha(1);
-
-                       }
-                   }
-               });
+//               viewPager.setPageTransformer(true, new ViewPager.PageTransformer() {
+//                   @Override
+//                   public void transformPage(View view, float position) {
+//                       int pageWidth = view.getWidth();
+//
+//
+//                       if (position <=0) { // [-Infinity,-1)
+//                           // This page is way off-screen to the left.
+//                           view.setAlpha(1);
+//
+//
+//                       } else if (position == 1) { // [-1,1]
+//
+//                           view.setTranslationX(-position * (pageWidth)); //Half the normal speed
+//
+//                       } else { // (1,+Infinity]
+//                           // This page is way off-screen to the right.
+//                           view.setAlpha(1);
+//
+//                       }
+//                   }
+//               });
+               viewPager.setPageTransformer(true,new StackTransformer());
                break;
            case 5:
-               viewPager.setPageTransformer(true, new ViewPager.PageTransformer() {
-                   @Override
-                   public void transformPage(View view, float position) {
-                       float ROT_MOD = -15f;
-                       final float width = view.getWidth();
-                       final float height = view.getHeight();
-                       final float rotation = ROT_MOD * position * -1.25f;
-
-                       view.setPivotX(width * 0.5f);
-                       view.setPivotY(height);
-                       view.setRotation(rotation);
-                   }
-               });
+//               viewPager.setPageTransformer(true, new ViewPager.PageTransformer() {
+//                   @Override
+//                   public void transformPage(View view, float position) {
+//                       float ROT_MOD = -15f;
+//                       final float width = view.getWidth();
+//                       final float height = view.getHeight();
+//                       final float rotation = ROT_MOD * position * -1.25f;
+//
+//                       view.setPivotX(width * 0.5f);
+//                       view.setPivotY(height);
+//                       view.setRotation(rotation);
+//                   }
+//               });
+               viewPager.setPageTransformer(true,new TabletTransformer());
                break;
            case 6:
-               viewPager.setPageTransformer(true, new ViewPager.PageTransformer() {
-                   @Override
-                   public void transformPage(View view, float position) {
-                       final float height = view.getHeight();
-                       final float width = view.getWidth();
-                       final float scale = min(position < 0 ? 1f : Math.abs(1f - position), 0.5f);
 
-                       view.setScaleX(scale);
-                       view.setScaleY(scale);
-                       view.setPivotX(width * 0.5f);
-                       view.setPivotY(height * 0.5f);
-                       view.setTranslationX(position < 0 ? width * position : -width * position * 0.25f);
-                   }
-               });
+//               viewPager.setPageTransformer(true, new ViewPager.PageTransformer() {
+//                   @Override
+//                   public void transformPage(View view, float position) {
+//                       final float height = view.getHeight();
+//                       final float width = view.getWidth();
+//                       final float scale = min(position < 0 ? 1f : Math.abs(1f - position), 0.5f);
+//
+//                       view.setScaleX(scale);
+//                       view.setScaleY(scale);
+//                       view.setPivotX(width * 0.5f);
+//                       view.setPivotY(height * 0.5f);
+//                       view.setTranslationX(position < 0 ? width * position : -width * position * 0.25f);
+//                   }
+//               });
+               viewPager.setPageTransformer(true,new ZoomInTransformer());
                break;
            case 7:
-               viewPager.setPageTransformer(true, new ViewPager.PageTransformer() {
-                   @Override
-                   public void transformPage(View view, float position) {
-
-                       final float scale = 1f + Math.abs(position);
-                       view.setScaleX(scale);
-                       view.setScaleY(scale);
-                       view.setPivotX(view.getWidth() * 0.5f);
-                       view.setPivotY(view.getHeight() * 0.5f);
-                       view.setAlpha(position < -1f || position > 1f ? 0f : 1f - (scale - 1f));
-                       if(position == -1){
-                           view.setTranslationX(view.getWidth() * -1);
-                   }
-                  }
-               });
+//               viewPager.setPageTransformer(true, new ViewPager.PageTransformer() {
+//                   @Override
+//                   public void transformPage(View view, float position) {
+//
+//                       final float scale = 1f + Math.abs(position);
+//                       view.setScaleX(scale);
+//                       view.setScaleY(scale);
+//                       view.setPivotX(view.getWidth() * 0.5f);
+//                       view.setPivotY(view.getHeight() * 0.5f);
+//                       view.setAlpha(position < -1f || position > 1f ? 0f : 1f - (scale - 1f));
+//                       if(position == -1){
+//                           view.setTranslationX(view.getWidth() * -1);
+//                   }
+//                  }
+//               });
+               viewPager.setPageTransformer(true,new CubeOutTransformer());
                break;
            case 8:
-               viewPager.setPageTransformer(true, new ViewPager.PageTransformer() {
-                   @Override
-                   public void transformPage(View view, float position) {
-                       int pageWidth = view.getWidth();
-
-
-                       if (position <=0) { // [-Infinity,-1)
-                           // This page is way off-screen to the left.
-                           view.setAlpha(1);
-
-                       } else if (position == 1) { // [-1,1]
-
-                           view.setTranslationX(-position * (pageWidth / 2)); //Half the normal speed
-
-                       } else { // (1,+Infinity]
-                           // This page is way off-screen to the right.
-                           view.setAlpha(1);
-                       }
-                   }
-               });
+//               viewPager.setPageTransformer(true, new ViewPager.PageTransformer() {
+//                   @Override
+//                   public void transformPage(View view, float position) {
+//                       int pageWidth = view.getWidth();
+//
+//
+//                       if (position <=0) { // [-Infinity,-1)
+//                           // This page is way off-screen to the left.
+//                           view.setAlpha(1);
+//
+//                       } else if (position == 1) { // [-1,1]
+//
+//                           view.setTranslationX(-position * (pageWidth / 2)); //Half the normal speed
+//
+//                       } else { // (1,+Infinity]
+//                           // This page is way off-screen to the right.
+//                           view.setAlpha(1);
+//                       }
+//                   }
+//               });
+               viewPager.setPageTransformer(true,new AccordionTransformer());
                break;
 
 

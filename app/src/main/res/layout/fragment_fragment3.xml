@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#cc187408"
+    android:background="#b02e2b2b"
     tools:context="com.example.umapa.myanimations2.Fragments.Fragment3">
 
     <!-- TODO: Update blank fragment layout -->
