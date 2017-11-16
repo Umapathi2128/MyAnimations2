@@ -38,6 +38,14 @@
         android:layout_below="@+id/appbar"
         android:visibility="gone"
         android:layout_above="@+id/ll_bottom"/>
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/gif"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/source"
+        android:layout_below="@+id/appbar"
+        android:background="#93ab51"
+        android:layout_above="@+id/ll_bottom"/>
    <ScrollView
        android:id="@+id/scrollview"
        android:layout_width="match_parent"

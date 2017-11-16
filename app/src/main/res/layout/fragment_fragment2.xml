@@ -10,7 +10,7 @@
         android:id="@+id/f2textview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment"
+       android:background="@drawable/crt_img2"
         android:gravity="center"
         android:textSize="30sp"
         android:textColor="#fff"/>

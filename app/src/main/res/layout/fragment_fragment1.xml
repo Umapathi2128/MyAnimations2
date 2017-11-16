@@ -10,7 +10,7 @@
         android:id="@+id/f1textview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment"
+       android:background="@drawable/crt_img1"
         android:gravity="center"
         android:textColor="#fff"
         android:textSize="30sp"/>
