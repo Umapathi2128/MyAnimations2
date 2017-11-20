@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view"
+    >
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_list"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="ListView" />
+        <item
+            android:id="@+id/nav_gallery"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="ViewPager" />
+        <item
+            android:id="@+id/nav_recycler"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Recycler View" />
+        <item
+            android:id="@+id/nav_img"
+            android:icon="@drawable/ic_autorenew"
+            android:title="Start Animation" />
+        <item
+            android:id="@+id/nav_metiral"
+            android:icon="@drawable/ic_fiber_manual_record_black_24dp"
+            android:title="Metirial Design" />
+
+    </group>
+
+
+
+
+</menu>
