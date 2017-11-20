@@ -19,8 +19,12 @@
             android:title="Recycler View" />
         <item
             android:id="@+id/nav_img"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/ic_autorenew"
             android:title="Start Animation" />
+        <item
+            android:id="@+id/nav_metiral"
+            android:icon="@drawable/ic_fiber_manual_record_black_24dp"
+            android:title="Metirial Design" />
 
     </group>
 

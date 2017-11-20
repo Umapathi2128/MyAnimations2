@@ -21,6 +21,11 @@
             android:id="@+id/nav_img"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="Start Animation" />
+        <item
+            android:id="@+id/nav_metirial"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Metirial Design" />
+
 
     </group>
 

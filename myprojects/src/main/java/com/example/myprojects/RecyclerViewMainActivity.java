@@ -58,13 +58,13 @@ public class RecyclerViewMainActivity extends AppCompatActivity implements MyInt
         list.add(new ListAdapters(this,R.drawable.crt_img3,R.string.crt_img31,R.string.adam_gm,R.string.the_eye1,R.string.the_eye01,R.string.adam1));
         list.add(new ListAdapters(this,R.drawable.img5,R.string.crt_img41,R.string.adam_gm,R.string.the_eye1,R.string.the_eye01,R.string.adam1));
         list.add(new ListAdapters(this,R.drawable.mukundha,R.string.crt_img51,R.string.adam_gm,R.string.the_eye1,R.string.the_eye01,R.string.adam1));
-        list.add(new ListAdapters(this,R.drawable.theeye,R.string.crt_img61,R.string.adam_gm,R.string.the_eye1,R.string.the_eye01,R.string.adam1));
+        list.add(new ListAdapters(this,R.drawable.uma,R.string.crt_img61,R.string.adam_gm,R.string.the_eye1,R.string.the_eye01,R.string.adam1));
         list.add(new ListAdapters(this,R.drawable.f8,R.string.f8,R.string.adam_gm,R.string.the_eye1,R.string.the_eye01,R.string.adam1));
         list.add(new ListAdapters(this,R.drawable.img4,R.string.film,R.string.adam_gm,R.string.the_eye1,R.string.the_eye01,R.string.adam1));
         list.add(new ListAdapters(this,R.drawable.hangover,R.string.hangover,R.string.adam_gm,R.string.the_eye1,R.string.the_eye01,R.string.adam1));
         list.add(new ListAdapters(this,R.drawable.heaters,R.string.haters,R.string.adam_gm,R.string.the_eye1,R.string.the_eye01,R.string.adam1));
         list.add(new ListAdapters(this,R.drawable.bombay,R.string.jaws,R.string.adam_gm,R.string.the_eye1,R.string.the_eye01,R.string.adam1));
-        list.add(new ListAdapters(this,R.drawable.theeye,R.string.the_eye,R.string.adam_gm,R.string.the_eye1,R.string.the_eye01,R.string.adam1));
+        list.add(new ListAdapters(this,R.drawable.uma,R.string.the_eye,R.string.adam_gm,R.string.the_eye1,R.string.the_eye01,R.string.adam1));
     }
 
     public void init()

@@ -26,19 +26,19 @@
     </style>
 
 
-    <style name="AppTheme1" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- enable window content transitions -->
-        <item name="android:windowContentTransitions" tools:ignore="NewApi">true</item>
+    <!--<style name="AppTheme1" parent="Theme.AppCompat.Light.DarkActionBar">-->
+        <!--&lt;!&ndash; enable window content transitions &ndash;&gt;-->
+        <!--<item name="android:windowContentTransitions" tools:ignore="NewApi">true</item>-->
 
-        <!-- specify enter and exit transitions -->
-        <!-- options are: explode, slide, fade -->
-        <item name="android:windowEnterTransition" tools:ignore="NewApi">@transition/change_image_transform</item>
-        <item name="android:windowExitTransition" tools:ignore="NewApi">@transition/change_image_transform</item>
+        <!--&lt;!&ndash; specify enter and exit transitions &ndash;&gt;-->
+        <!--&lt;!&ndash; options are: explode, slide, fade &ndash;&gt;-->
+        <!--<item name="android:windowEnterTransition" tools:ignore="NewApi">@transition/change_image_transform</item>-->
+        <!--<item name="android:windowExitTransition" tools:ignore="NewApi">@transition/change_image_transform</item>-->
 
-        <!-- specify shared element transitions -->
-        <item name="android:windowSharedElementEnterTransition" tools:ignore="NewApi">
-            @transition/change_image_transform</item>
-        <item name="android:windowSharedElementExitTransition" tools:ignore="NewApi">
-            @transition/change_image_transform</item>
-    </style>
+        <!--&lt;!&ndash; specify shared element transitions &ndash;&gt;-->
+        <!--<item name="android:windowSharedElementEnterTransition" tools:ignore="NewApi">-->
+            <!--@transition/change_image_transform</item>-->
+        <!--<item name="android:windowSharedElementExitTransition" tools:ignore="NewApi">-->
+            <!--@transition/change_image_transform</item>-->
+    <!--</style>-->
 </resources>

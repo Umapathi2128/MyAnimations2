@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity
     ListView listView;
     Button apply;
     ArrayList animList;
-    String animationList[] = {"fade_in","fade_out","blink","rotate","zoom_in","slide_left","slide_right","translate"};
+    String animationList[] = {"Fade In","Fade Out","Blink","Rotate","Zoom In","Slide Left","Slide Right","Translate"};
     ArrayList widgetList;
     LinearLayout linearLayout;
     int animationSelectedItem;
@@ -95,8 +95,8 @@ public class MainActivity extends AppCompatActivity
 //    viewPagerAnimations();
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
+//        setSupportActionBar(toolbar);
+        toolbar.setTitle("My Projects");
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -267,9 +267,15 @@ public class MainActivity extends AppCompatActivity
 //                linearLayout.setVisibility(View.VISIBLE);
 //                break;
             case R.id.nav_recycler:
-                Intent intent=new Intent(this,RecyclerViewMainActivity.class);
+                Intent intent=getPackageManager().getLaunchIntentForPackage("com.example.umapa.recyclerview");
                 startActivity(intent);
                 break;
+//            case R.id.nav_metiral:
+//                Intent intent1=getPackageManager().getLaunchIntentForPackage("com.example.umapa.tapslayoutexample");
+//                startActivity(intent1);
+//                break;
+
+
 
 
 
