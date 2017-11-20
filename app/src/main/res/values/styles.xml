@@ -20,7 +20,7 @@
 
     <!-- custom listview-->
     <style name="listview_layout">
-        <item name="android:background">@drawable/listview_background</item>
+        <!--<item name="android:background">@drawable/listview_background</item>-->
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_margin">16dp</item>
     </style>

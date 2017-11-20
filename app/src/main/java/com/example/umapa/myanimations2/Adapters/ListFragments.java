@@ -3,6 +3,10 @@ package com.example.umapa.myanimations2.Adapters;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
 
 import java.util.ArrayList;
 
@@ -17,6 +21,7 @@ public class ListFragments extends FragmentPagerAdapter {
         super(fm);
         this.list=list;
 
+
     }
 
     @Override
@@ -28,4 +33,7 @@ public class ListFragments extends FragmentPagerAdapter {
     public int getCount() {
         return list.size();
     }
+
+
+
 }

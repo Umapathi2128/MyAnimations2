@@ -1,0 +1,104 @@
+<resources>
+    <string name="app_name">My Projects</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+
+    <!--ARRAY LIST-->
+
+    <string name="adam">Adam</string>
+    <string name="baby">Baby</string>
+    <string name="bird">Bird</string>
+    <string name="brothers">Brothers</string>
+    <string name="crt_img1">crt_img1</string>
+    <string name="crt_img2">crt_img2</string>
+    <string name="crt_img3">crt_img3</string>
+    <string name="crt_img4">crt_img4</string>
+    <string name="crt_img5">crt_img5</string>
+    <string name="crt_img6">crt_img6</string>
+    <string name="f8">Fast and furious</string>
+    <string name="film">Film</string>
+    <string name="hangover">Hangover</string>
+    <string name="haters">Haters</string>
+    <string name="jaws">Jaws</string>
+    <string name="jungle">Jaws</string>
+    <string name="the_eye">The Eye</string>
+
+    <string name="adam1">America</string>
+    <string name="baby1">canada</string>
+    <string name="bird1">India</string>
+    <string name="brothers1">Swis</string>
+    <string name="crt_img11">US</string>
+    <string name="crt_img21">India</string>
+    <string name="crt_img31">India</string>
+    <string name="crt_img41">India</string>
+    <string name="crt_img51">America</string>
+    <string name="crt_img61">Landon</string>
+    <string name="f81">Fast and furious</string>
+    <string name="film1">German</string>
+    <string name="hangover1">Chinies</string>
+    <string name="haters1">Japanies</string>
+    <string name="jaws1">hankong</string>
+    <string name="jungle1">US</string>
+    <string name="the_eyes">England</string>
+
+    <string name="adam_gm">Adam@gmail.com</string>
+    <string name="baby_gm">Baby@gmail.com</string>
+    <string name="bird_gm">Bird@gmail.com</string>
+    <string name="brothers_gm">Brothers@gmail.com</string>
+    <string name="crt_img1_gm">crt_img1@gmail.com</string>
+    <string name="crt_img2_gm">crt_img2@gmail.com</string>
+    <string name="crt_img3_gm">crt_img3@gmail.com</string>
+    <string name="crt_img4_gm">crt_img4@gmail.com</string>
+    <string name="crt_img5_gm">crt_img5@gmail.com</string>
+    <string name="crt_img6_gm">crt_img6@gmail.com</string>
+    <string name="f8_gm">Fast and furious@gmail.com</string>
+    <string name="film_gm">Film@gmail.com</string>
+    <string name="hangover_gm">Hangover@gmail.com</string>
+    <string name="haters_gm">Haters@gmail.com</string>
+    <string name="jaws_gm">Jaws@gmail.com</string>
+    <string name="jungle_gm">Jaws@gmail.com</string>
+    <string name="the_eye_gm">The Eye@gmail.com</string>
+
+    <string name="the_eye1">7895462152</string>
+    <string name="the_eye2">9874563210</string>
+    <string name="the_eye3">9123654789</string>
+    <string name="the_eye4">8796541230</string>
+    <string name="the_eye5">7894561230</string>
+    <string name="the_eye6">9632587410</string>
+    <string name="the_eye7">8523697410</string>
+    <string name="the_eye8">8423651790</string>
+    <string name="the_eye9">7012365489</string>
+    <string name="the_eye10">998877512</string>
+    <string name="the_eye11">9966002135</string>
+    <string name="the_eye12">7758236987</string>
+    <string name="the_eye13">7896541230</string>
+    <string name="the_eye14">4785236541</string>
+    <string name="the_eye15">1236547898</string>
+    <string name="the_eye16">4569874563</string>
+
+    <string name="the_eye01">2001</string>
+    <string name="the_eye21">2009</string>
+    <string name="the_eye31">2008</string>
+    <string name="the_eye41">2018</string>
+    <string name="the_eye51">20088</string>
+    <string name="the_eye61">2017</string>
+    <string name="the_eye71">2012</string>
+    <string name="the_eye81">2014</string>
+    <string name="the_eye91">2010</string>
+    <string name="the_eye101">2017</string>
+    <string name="the_eye111">2015</string>
+    <string name="the_eye121">2015</string>
+    <string name="the_eye131">2014</string>
+    <string name="the_eye141">2013</string>
+    <string name="the_eye151">2001</string>
+    <string name="the_eye161">2011</string>
+
+</resources>

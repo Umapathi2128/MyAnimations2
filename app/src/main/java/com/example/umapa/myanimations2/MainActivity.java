@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity
     ListView listView;
     Button apply;
     ArrayList animList;
-    String animationList[] = {"Fade_in", "Fade_out", "Blink", "Rotate", "Zoom_in","zoom_out"};
+    String animationList[] = {"fade_in","fade_out","blink","rotate","zoom_in","slide_left","slide_right","translate"};
     ArrayList widgetList;
     LinearLayout linearLayout;
     int animationSelectedItem;
@@ -228,7 +228,6 @@ public class MainActivity extends AppCompatActivity
                 gifImageView.setVisibility(View.GONE);
 //                Toast.makeText(this, "check", Toast.LENGTH_LONG).show();
                 adapterFragments = new AdapterFragments(this, listview_list);
-
                 listView.setAdapter(adapterFragments);
                 listView.setVisibility(View.VISIBLE);
                 spinner.setVisibility(View.VISIBLE);
@@ -401,21 +400,21 @@ public class MainActivity extends AppCompatActivity
 //                zoom_inAnimation(viewPager);
                 break;
             case 5:
-                animationProvider(R.anim.zoom_out);
+                animationProvider(R.anim.slide_left);
                 animationProvider3(R.anim.zoom_out);
                 animationProvider2();
 //                zoom_outAnimation(listView);
 //                zoom_outAnimation(viewPager);
                 break;
             case 6:
-                animationProvider(R.anim.zoom_out);
+                animationProvider(R.anim.slide_right);
                 animationProvider3(R.anim.zoom_out);
                 animationProvider2();
 //                zoom_outAnimation(listView);
 //                zoom_outAnimation(viewPager);
                 break;
             case 7:
-                animationProvider(R.anim.zoom_out);
+                animationProvider(R.anim.translate);
                 animationProvider3(R.anim.zoom_out);
                 animationProvider2();
 //                zoom_outAnimation(listView);

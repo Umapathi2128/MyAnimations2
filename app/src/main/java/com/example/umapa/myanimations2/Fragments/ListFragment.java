@@ -22,7 +22,7 @@ public class ListFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    String list[]={"fade_in","fade_out","rotate","blink","zoom_in","zoom_out"};
+    String list[]={"fade_in","fade_out","rotate","blink","zoom_in","slide_left","slide_right","translate"};
     Spinner spinner;
     View view;
 
@@ -91,4 +91,5 @@ public class ListFragment extends Fragment {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
     }
+
 }
