@@ -48,25 +48,65 @@
        
         android:layout_above="@+id/ll_bottom"/>
    <ScrollView
-       android:id="@+id/scrollview"
-       android:layout_width="match_parent"
-       android:layout_height="match_parent"
-       android:layout_below="@+id/appbar"
-       android:layout_above="@+id/ll_bottom"
-       android:visibility="gone"
-       android:layout_margin="16dp"
-       android:scrollbars="none">
-       <LinearLayout
-           android:id="@+id/widgets"
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:scrollbars="none"
-           android:visibility="gone"
-           android:orientation="vertical"
-           >
-           <include layout="@layout/activity_recycler_view_main"/>
-       </LinearLayout>
-   </ScrollView>
+    android:id="@+id/scrollview"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_below="@+id/appbar"
+    android:layout_above="@+id/ll_bottom"
+    android:visibility="gone"
+    android:layout_margin="16dp"
+    android:scrollbars="none">
+    <LinearLayout
+        android:id="@+id/widgets"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        android:background="#dc546414"
+        android:orientation="vertical"
+        >
+        <include layout="@layout/activity_email"/>
+    </LinearLayout>
+</ScrollView>
+    <ScrollView
+        android:id="@+id/scrollview1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/appbar"
+        android:layout_above="@+id/ll_bottom"
+        android:visibility="gone"
+        android:layout_margin="16dp"
+        android:scrollbars="none">
+        <LinearLayout
+            android:id="@+id/widgets1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none"
+
+            android:orientation="vertical"
+            >
+            <include layout="@layout/fragment_widgets"/>
+        </LinearLayout>
+    </ScrollView>
+    <ScrollView
+        android:id="@+id/scrollview2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/appbar"
+        android:layout_above="@+id/ll_bottom"
+        android:visibility="gone"
+        android:layout_margin="16dp"
+        android:scrollbars="none">
+        <LinearLayout
+            android:id="@+id/sendsms"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none"
+
+            android:orientation="vertical"
+            >
+            <include layout="@layout/activity_send_sms"/>
+        </LinearLayout>
+    </ScrollView>
     <LinearLayout
         android:id="@+id/ll_bottom"
         android:layout_width="match_parent"

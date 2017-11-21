@@ -28,17 +28,17 @@
         android:layout_below="@+id/appbar"
         android:layout_above="@+id/ll_bottom"
         android:visibility="gone"/>
-    <ListView
-        android:id="@+id/lstview"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:dividerHeight="0dp"
-        android:layout_margin="16dp"
-        android:scrollbars="none"
-        android:layout_below="@+id/appbar"
+    <!--<ListView-->
+        <!--android:id="@+id/lstview"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:dividerHeight="0dp"-->
+        <!--android:layout_margin="16dp"-->
+        <!--android:scrollbars="none"-->
+        <!--android:layout_below="@+id/appbar"-->
 
-        android:visibility="gone"
-        android:layout_above="@+id/ll_bottom"/>
+        <!--android:visibility="gone"-->
+        <!--android:layout_above="@+id/ll_bottom"/>-->
     <pl.droidsonroids.gif.GifImageView
         android:id="@+id/gif"
         android:layout_width="match_parent"

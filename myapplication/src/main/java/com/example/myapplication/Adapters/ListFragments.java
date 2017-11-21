@@ -51,7 +51,7 @@ public class ListFragments extends BaseAdapter {
     public View getView(int i, View view, ViewGroup viewGroup) {
 
      view=inflater.inflate(R.layout.custom_listview,viewGroup,false);
-        @SuppressLint("WrongViewCast") TextView textView=view.findViewById(R.id.lv_lsfragment);
+        @SuppressLint("WrongViewCast") TextView textView=view.findViewById(R.id.tv_list);
         textView.setText(list.get(i));
         return view;
     }

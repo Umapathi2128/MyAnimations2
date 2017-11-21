@@ -6,25 +6,34 @@
 
     <group android:checkableBehavior="single">
         <item
+            android:id="@+id/nav_img"
+            android:icon="@drawable/ic_home"
+            android:title="Home" />
+        <item
             android:id="@+id/nav_list"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/ic_view_list"
             android:title="ListView" />
         <item
             android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/ic_adb"
             android:title="ViewPager" />
         <item
             android:id="@+id/nav_recycler"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/ic_directions"
             android:title="Recycler View" />
+
         <item
-            android:id="@+id/nav_img"
-            android:icon="@drawable/ic_autorenew"
-            android:title="Start Animation" />
+            android:id="@+id/nav_mail"
+            android:icon="@drawable/ic_email"
+            android:title="Send Email" />
         <item
-            android:id="@+id/nav_metiral"
-            android:icon="@drawable/ic_fiber_manual_record_black_24dp"
-            android:title="Metirial Design" />
+            android:id="@+id/nav_widget"
+            android:icon="@drawable/ic_widgets"
+            android:title="Widgets" />
+        <item
+            android:id="@+id/nav_sms"
+            android:icon="@drawable/ic_sms"
+            android:title="Send SMS" />
 
     </group>
 

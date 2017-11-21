@@ -114,7 +114,7 @@ public class MainActivity extends AppCompatActivity
         f1TextView2 = findViewById(R.id.f2textview);
         f1TextView3 = findViewById(R.id.f3textview);
         viewPager = findViewById(R.id.view_pager);
-        listView = findViewById(R.id.lstview);
+//        listView = findViewById(R.id.lstview);
         linearLayout=findViewById(R.id.widgets);
         gifImageView= (GifImageView) findViewById(R.id.gif);
         spinner= findViewById(R.id.spin);
@@ -211,21 +211,15 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         switch (item.getItemId()) {
             case R.id.nav_list:
-//                addingAdapeters(animationList);
-//                viewPager.setVisibility(View.GONE);
-//                gifImageView.setVisibility(View.GONE);
-////                Toast.makeText(this, "check", Toast.LENGTH_LONG).show();
-//                adapterFragments = new AdapterFragments(this, listview_list);
-//                listView.setAdapter(adapterFragments);
-//                listView.setVisibility(View.VISIBLE);
-//                spinner.setVisibility(View.VISIBLE);
+                addingAdapeters(animationList);
+
                 FragmentManager fragmentManager = getFragmentManager ();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction ();
 
                 ListFragment myfragment = new ListFragment();  //your fragment
 
                 // work here to add, remove, etc
-                fragmentTransaction.add(R.id.lstview, new android.app.ListFragment());
+                fragmentTransaction.add(R.id.lv_lsfragment, new android.app.ListFragment());
                 fragmentTransaction.commit ();
 
 

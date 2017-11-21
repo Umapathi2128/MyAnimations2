@@ -10,6 +10,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -22,6 +23,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
+import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -36,6 +38,7 @@ import com.ToxicBakery.viewpager.transforms.TabletTransformer;
 import com.ToxicBakery.viewpager.transforms.ZoomInTransformer;
 import com.example.myprojects.Adapters.AdapterFragments;
 import com.example.myprojects.Adapters.ListFragments;
+import com.example.myprojects.Fragments.EmailFragment;
 import com.example.myprojects.Fragments.Fragment1;
 import com.example.myprojects.Fragments.Fragment2;
 import com.example.myprojects.Fragments.Fragment3;
@@ -61,11 +64,11 @@ public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,ListFragment.OnFragmentInteractionListener,
         Fragment2.OnFragmentInteractionListener, Fragment1.OnFragmentInteractionListener,Fragment4.OnFragmentInteractionListener,
         Fragment3.OnFragmentInteractionListener,Fragment5.OnFragmentInteractionListener,Fragment6.OnFragmentInteractionListener
-        ,Animation.AnimationListener,AdapterView.OnItemSelectedListener,View.OnClickListener {
+        ,Animation.AnimationListener,AdapterView.OnItemSelectedListener,View.OnClickListener,EmailFragment.OnFragmentInteractionListener {
     RelativeLayout content_layout;
     //    ViewPager viewPager;
     TextView f1TextView1, f1TextView2, f1TextView3, ls_textview;
-    ArrayList listview_list, viewpager_list;
+    ArrayList listview_list, viewpager_list,activity_list,list_sms;
     ViewPager viewPager;
     AdapterFragments adapterFragments;
     Animation animation;
@@ -74,11 +77,13 @@ public class MainActivity extends AppCompatActivity
     ArrayList animList;
     String animationList[] = {"Fade In","Fade Out","Blink","Rotate","Zoom In","Slide Left","Slide Right","Translate"};
     ArrayList widgetList;
-    LinearLayout linearLayout;
+    LinearLayout linearLayout,linearLayout1,linearLayout2;
     int animationSelectedItem;
     Spinner spinner;
     GifImageView gifImageView;
     LinearLayout gif_layout;
+    ScrollView widgetsview;
+    ScrollView emilview,sendsms;
     boolean isListView = true, isViewPager = true,isWidgets=true;
 
     View view;
@@ -120,10 +125,17 @@ public class MainActivity extends AppCompatActivity
         viewPager = findViewById(R.id.view_pager);
         listView = findViewById(R.id.lstview);
         linearLayout=findViewById(R.id.widgets);
+        linearLayout1=findViewById(R.id.widgets1);
+        linearLayout2=findViewById(R.id.sendsms);
         gifImageView= (GifImageView) findViewById(R.id.gif);
         spinner= findViewById(R.id.spin);
+        emilview=findViewById(R.id.scrollview);
+        widgetsview=findViewById(R.id.scrollview1);
+        sendsms=findViewById(R.id.scrollview2);
 
         animList = new ArrayList();
+        activity_list=new ArrayList();
+        list_sms=new ArrayList();
 
 
     }
@@ -162,6 +174,8 @@ public class MainActivity extends AppCompatActivity
         animList.add(R.anim.rotate);
         animList.add(R.anim.zoom_in);
         animList.add(R.anim.zoom_out);
+
+        activity_list.add(new EmailFragment());
     }
 
     // All click Listeners will done here...
@@ -226,6 +240,9 @@ public class MainActivity extends AppCompatActivity
                 addingAdapeters(animationList);
                 viewPager.setVisibility(View.GONE);
                 gifImageView.setVisibility(View.GONE);
+                emilview.setVisibility(View.GONE);
+                widgetsview.setVisibility(View.GONE);
+                sendsms.setVisibility(View.GONE);
 //                Toast.makeText(this, "check", Toast.LENGTH_LONG).show();
                 adapterFragments = new AdapterFragments(this, listview_list);
                 listView.setAdapter(adapterFragments);
@@ -236,6 +253,9 @@ public class MainActivity extends AppCompatActivity
             case R.id.nav_gallery:
                 gifImageView.setVisibility(View.GONE);
                 listView.setVisibility(View.GONE);
+                emilview.setVisibility(View.GONE);
+                widgetsview.setVisibility(View.GONE);
+                sendsms.setVisibility(View.GONE);
                 addingAdapeters(names);
 //                viewPager.removeAllViews()
 
@@ -248,6 +268,7 @@ public class MainActivity extends AppCompatActivity
                 viewPager.setAdapter(listFragment);
                 viewPager.setVisibility(View.VISIBLE);
                 spinner.setVisibility(View.VISIBLE);
+//                sendsms.setVisibility(View.GONE);
 
                 break;
             case R.id.nav_img:
@@ -255,25 +276,64 @@ public class MainActivity extends AppCompatActivity
                 viewPager.setVisibility(View.GONE);
                 gifImageView.setVisibility(View.VISIBLE);
                 spinner.setVisibility(View.GONE);
+                emilview.setVisibility(View.GONE);
+                widgetsview.setVisibility(View.GONE);
+                sendsms.setVisibility(View.GONE);
                 break;
 
 
-//            case R.id.nav_img:
-//                listView.setVisibility(View.GONE);
-//                viewPager.setVisibility(View.GONE);
-//                LayoutInflater layoutInflater= (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
-//                View view=layoutInflater.inflate(R.layout.fragment_widgets,null,false);
-//                linearLayout.addView(view);
-//                linearLayout.setVisibility(View.VISIBLE);
-//                break;
+            case R.id.nav_widget:
+                linearLayout1.removeAllViews();
+                listView.setVisibility(View.GONE);
+                viewPager.setVisibility(View.GONE);
+                emilview.setVisibility(View.GONE);
+                gifImageView.setVisibility(View.GONE);
+                widgetsview.setVisibility(View.VISIBLE);
+                sendsms.setVisibility(View.GONE);
+                LayoutInflater layoutInflater= (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
+                View view=layoutInflater.inflate(R.layout.fragment_widgets,null,false);
+                linearLayout1.addView(view);
+                linearLayout1.setVisibility(View.VISIBLE);
+                animation = AnimationUtils.loadAnimation(this, R.anim.slide_left);
+                linearLayout1.startAnimation(animation);
+                animation.setAnimationListener(this);
+                break;
             case R.id.nav_recycler:
                 Intent intent=getPackageManager().getLaunchIntentForPackage("com.example.umapa.recyclerview");
                 startActivity(intent);
+
                 break;
-//            case R.id.nav_metiral:
-//                Intent intent1=getPackageManager().getLaunchIntentForPackage("com.example.umapa.tapslayoutexample");
-//                startActivity(intent1);
-//                break;
+
+            case R.id.nav_mail:
+                sendsms.setVisibility(View.GONE);
+                listView.setVisibility(View.GONE);
+                viewPager.setVisibility(View.GONE);
+                gifImageView.setVisibility(View.GONE);
+                spinner.setVisibility(View.GONE);
+//                emilview.setVisibility(View.VISIBLE);
+                widgetsview.setVisibility(View.GONE);
+                Intent emailintent=new Intent(this,EmailActivity.class);
+                startActivity(emailintent);
+                finish();
+//                ListFragments listFragment1 = new ListFragments(getSupportFragmentManager(), activity_list);
+//                viewPager.setAdapter(listFragment1);
+//                viewPager.setVisibility(View.VISIBLE);
+
+                break;
+
+            case R.id.nav_sms:
+                listView.setVisibility(View.GONE);
+                viewPager.setVisibility(View.GONE);
+                gifImageView.setVisibility(View.GONE);
+                spinner.setVisibility(View.GONE);
+                emilview.setVisibility(View.GONE);
+                widgetsview.setVisibility(View.GONE);
+                sendsms.setVisibility(View.VISIBLE);
+                Intent intent2=new Intent(this,SendSMSActivity.class);
+                startActivity(intent2);
+                finish();
+
+                break;
 
 
 
